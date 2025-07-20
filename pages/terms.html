@@ -29,31 +29,31 @@
     gtag('config', 'G-F8V8Y4XQN4');
   </script>
 </head>
-<body class="min-h-screen flex flex-col bg-dark text-white">
-  <header class="bg-gray-900 py-4 shadow-md">
-    <div class="container mx-auto px-4 flex items-center justify-between">
-      <a href="https://www.vinnesia.my.id" class="flex items-center space-x-2">
-        <img src="https://via.placeholder.com/40" alt="Logo" class="logo">
+<body class="min-h-screen flex flex-col bg-dark-purple text-white">
+  <header class="bg-purple-900 py-4 shadow-md">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
+      <div class="flex items-center space-x-4 mb-4 md:mb-0">
+        <img src="/assets/logo.png" alt="Logo" class="logo w-10 h-10">
         <h1 class="text-xl md:text-2xl font-bold text-white">Sitemap.xml VIN NESIA</h1>
-      </a>
-      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+      </div>
+      <nav class="w-full md:w-auto">
+        <ul class="nav-links flex flex-col md:flex-row justify-center space-y-2 md:space-y-0 md:space-x-6 text-sm">
+          <li><a href="../index.html" class="hover:text-green-500">Home</a></li>
+          <li><a href="about.html" class="hover:text-green-500">About</a></li>
+          <li><a href="terms.html" class="hover:text-green-500">Terms</a></li>
+          <li><a href="privacy.html" class="hover:text-green-500">Privacy</a></li>
+          <li><a href="blog.html" class="hover:text-green-500">Blog</a></li>
+        </ul>
+      </nav>
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none mt-2">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
-    <nav id="nav-menu" class="container mx-auto px-4 mt-4 hidden md:block">
-      <ul class="nav-links flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 text-sm">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="terms.html" class="text-green">Terms</a></li>
-        <li><a href="privacy.html">Privacy</a></li>
-        <li><a href="blog.html">Blog</a></li>
-      </ul>
-    </nav>
   </header>
   <main class="container mx-auto px-4 py-8 flex-grow">
-    <section class="max-w-2xl mx-auto text-sm md:text-base">
+    <section class="max-w-2xl mx-auto bg-purple-800 p-6 rounded-lg">
       <h2 class="text-lg md:text-xl font-semibold text-white mb-4">Terms of Service</h2>
       <p class="text-gray-300 mb-4">
         Welcome to Sitemap.xml VIN NESIA. By using our website and services, you agree to the following terms:
@@ -66,20 +66,20 @@
         <li>We reserve the right to modify or discontinue the service at any time.</li>
       </ul>
       <p class="text-gray-300">
-        For questions or concerns, contact us at <a href="mailto:vin.nesiaa.id@gmail.com" class="text-green">vin.nesiaa.id@gmail.com</a>.
+        For questions or concerns, contact us at <a href="mailto:vin.nesiaa.id@gmail.com" class="hover:text-green-500">vin.nesiaa.id@gmail.com</a>.
       </p>
     </section>
   </main>
-  <footer class="bg-gray-900 py-4">
+  <footer class="bg-purple-900 py-4">
     <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
-      <p>Contact: <a href="mailto:vin.nesiaa.id@gmail.com" class="hover:text-green">vin.nesiaa.id@gmail.com</a></p>
-      <p>Follow us: <a href="https://www.instagram.com/vin.nesia.id" class="hover:text-green">Instagram</a></p>
+      <p>Contact: <a href="mailto:vin.nesiaa.id@gmail.com" class="hover:text-green-500">vin.nesiaa.id@gmail.com</a></p>
+      <p>Follow us: <a href="https://www.instagram.com/vin.nesia.id" class="hover:text-green-500">Instagram</a></p>
       <p>© 2025 Sitemap.xml VIN NESIA. All rights reserved.</p>
     </div>
   </footer>
   <script>
     const menuToggle = document.getElementById('menu-toggle');
-    const navMenu = document.getElementById('nav-menu');
+    const navMenu = document.querySelector('nav ul');
     menuToggle.addEventListener('click', () => {
       navMenu.classList.toggle('hidden');
     });
