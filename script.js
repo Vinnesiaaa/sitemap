@@ -7,18 +7,18 @@ document.getElementById('addUrl').addEventListener('click', function() {
   urlEntry.innerHTML = `
     <label for="mainUrl-${index}" class="block text-sm font-medium text-gray-300">Main URL</label>
     <input type="url" id="mainUrl-${index}" name="mainUrl[]" required
-           class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-800 text-white text-sm"
+           class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-900 text-white text-sm"
            placeholder="https://example.com">
     <label for="path-${index}" class="block text-sm font-medium text-gray-300 mt-2">Path</label>
     <input type="text" id="path-${index}" name="path[]"
-           class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-800 text-white text-sm"
+           class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-900 text-white text-sm"
            placeholder="/page${index + 1}">
     <label for="lastmod-${index}" class="block text-sm font-medium text-gray-300 mt-2">Last Modified (YYYY-MM-DD)</label>
     <input type="date" id="lastmod-${index}" name="lastmod[]"
-           class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-800 text-white text-sm">
+           class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-900 text-white text-sm">
     <label for="changefreq-${index}" class="block text-sm font-medium text-gray-300 mt-2">Change Frequency</label>
     <select id="changefreq-${index}" name="changefreq[]"
-            class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-800 text-white text-sm">
+            class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-900 text-white text-sm">
       <option value="daily">Daily</option>
       <option value="weekly">Weekly</option>
       <option value="monthly">Monthly</option>
@@ -27,7 +27,7 @@ document.getElementById('addUrl').addEventListener('click', function() {
     </select>
     <label for="priority-${index}" class="block text-sm font-medium text-gray-300 mt-2">Priority (0.0 - 1.0)</label>
     <input type="number" id="priority-${index}" name="priority[]" step="0.1" min="0" max="1"
-           class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-800 text-white text-sm"
+           class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-900 text-white text-sm"
            placeholder="0.8">
   `;
   urlList.appendChild(urlEntry);
@@ -57,7 +57,6 @@ document.getElementById('sitemapForm').addEventListener('submit', function(e) {
     const changefreq = changefreqs[i].value;
     const priority = priorities[i].value || '0.8';
 
-    // Validasi
     if (!urlRegex.test(mainUrl)) {
       errorMessage.textContent = `Invalid URL format at entry ${i + 1}`;
       errorMessage.classList.remove('hidden');
@@ -83,7 +82,6 @@ document.getElementById('sitemapForm').addEventListener('submit', function(e) {
     urls.push({ fullUrl, lastmod, changefreq, priority });
   }
 
-  // Generate XML
   let xmlContent = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
   urls.forEach(url => {
@@ -98,7 +96,6 @@ document.getElementById('sitemapForm').addEventListener('submit', function(e) {
   xmlContent += `
 </urlset>`;
 
-  // Event Tracking
   gtag('event', 'generate_sitemap', {
     'event_category': 'Sitemap',
     'event_label': 'Generate',
