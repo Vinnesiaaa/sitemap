@@ -1,18 +1,33 @@
 /* styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dark-purple: #4C2E6A;
+  --purple-900: #4C2E6A;
+  --purple-800: #5A3678;
+  --purple-700: #6B46C1;
+  --purple-600: #7C4DFF;
+  --green-500: #38A169;
+}
+
 body {
-  background-color: #1A202C;
+  background-color: var(--dark-purple);
   color: #E2E8F0;
   font-family: 'Inter', sans-serif;
 }
 
 .logo {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+  width: 40px;         /* Tetap ukuran 40px lebar */
+  height: 40px;        /* Tetap ukuran 40px tinggi */
+  object-fit: contain; /* Pastikan gambar tidak terdistorsi, menyesuaikan dengan ukuran container */
+  max-width: 100%;     /* Pastikan tidak melebihi container */
+  max-height: 100%;    /* Pastikan tidak melebihi container */
 }
 
 .form-container {
-  background-color: #2D3748;
+  background-color: var(--purple-800);
   border-radius: 8px;
   padding: 1.5rem;
 }
@@ -20,39 +35,34 @@ body {
 .nav-links a {
   color: #E2E8F0;
   transition: color 0.3s;
-  font-size: 0.875rem;
 }
 
 .nav-links a:hover {
-  color: #38A169;
+  color: var(--green-500);
 }
 
 .btn-generate {
-  background-color: #6B46C1;
+  background-color: var(--purple-600);
   color: white;
   transition: background-color 0.3s;
 }
 
 .btn-generate:hover {
-  background-color: #553C9A;
+  background-color: var(--purple-700);
 }
 
 .btn-add-url {
-  background-color: #38A169;
+  background-color: var(--purple-700);
   color: white;
   transition: background-color 0.3s;
 }
 
 .btn-add-url:hover {
-  background-color: #2F855A;
-}
-
-.text-green {
-  color: #38A169;
+  background-color: var(--purple-600);
 }
 
 .url-entry {
-  border-bottom: 1px solid #4A5568;
+  border-bottom: 1px solid #6B46C1;
   padding-bottom: 1rem;
   margin-bottom: 1rem;
 }
@@ -77,6 +87,12 @@ body {
   input, select {
     font-size: 0.875rem;
   }
+  header .flex-col {
+    flex-direction: column;
+  }
+  header .space-x-4 {
+    justify-content: center;
+  }
 }
 
 @media (min-width: 641px) and (max-width: 768px) {
@@ -97,5 +113,8 @@ body {
   }
   .form-container {
     padding: 2rem;
+  }
+  header .flex-col {
+    flex-direction: row;
   }
 }
