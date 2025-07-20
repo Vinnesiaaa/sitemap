@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitemap.xml VIN NESIA - Generate XML Sitemaps</title>
+  <meta name="description" content="Generate XML sitemaps easily with Sitemap.xml VIN NESIA. Boost your website's SEO with our free tool.">
+  <meta name="keywords" content="sitemap generator, XML sitemap, SEO tool, VIN NESIA, website optimization">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Sitemap.xml VIN NESIA">
+  <link rel="canonical" href="https://sitemap.vinnesia.my.id">
+  <meta property="og:title" content="Sitemap.xml VIN NESIA - Generate XML Sitemaps">
+  <meta property="og:description" content="Create XML sitemaps for your website to improve SEO. Free and easy-to-use tool by VIN NESIA.">
+  <meta property="og:url" content="https://sitemap.vinnesia.my.id">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sitemap.vinnesia.my.id/assets/logo.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sitemap.xml VIN NESIA - Generate XML Sitemaps">
+  <meta name="twitter:description" content="Create XML sitemaps for your website to improve SEO. Free and easy-to-use tool by VIN NESIA.">
+  <meta name="twitter:image" content="https://sitemap.vinnesia.my.id/assets/logo.png">
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-F8V8Y4XQN4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-F8V8Y4XQN4');
+  </script>
+</head>
+<body class="min-h-screen flex flex-col bg-dark text-white">
+  <!-- Header -->
+  <header class="bg-gray-900 py-4 shadow-md">
+    <div class="container mx-auto px-4 flex items-center justify-between">
+      <a href="https://www.vinnesia.my.id" class="flex items-center space-x-2">
+        <img src="https://via.placeholder.com/40" alt="Logo" class="logo">
+        <h1 class="text-xl md:text-2xl font-bold text-white">Sitemap.xml VIN NESIA</h1>
+      </a>
+      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    <nav id="nav-menu" class="container mx-auto px-4 mt-4 hidden md:block">
+      <ul class="nav-links flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6 text-sm">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/about.html">About</a></li>
+        <li><a href="pages/terms.html">Terms</a></li>
+        <li><a href="pages/privacy.html">Privacy</a></li>
+        <li><a href="pages/blog.html">Blog</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-8 flex-grow">
+    <section class="form-container max-w-2xl mx-auto">
+      <h2 class="text-lg md:text-xl font-semibold text-white mb-4">Generate Your Sitemap.xml</h2>
+      <form id="sitemapForm" class="space-y-4">
+        <div id="url-list">
+          <div class="url-entry">
+            <label for="mainUrl-0" class="block text-sm font-medium text-gray-300">Main URL</label>
+            <input type="url" id="mainUrl-0" name="mainUrl[]" required
+                   class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-800 text-white text-sm"
+                   placeholder="https://example.com">
+            <label for="path-0" class="block text-sm font-medium text-gray-300 mt-2">Path</label>
+            <input type="text" id="path-0" name="path[]"
+                   class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-800 text-white text-sm"
+                   placeholder="/page1">
+            <label for="lastmod-0" class="block text-sm font-medium text-gray-300 mt-2">Last Modified (YYYY-MM-DD)</label>
+            <input type="date" id="lastmod-0" name="lastmod[]"
+                   class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-800 text-white text-sm">
+            <label for="changefreq-0" class="block text-sm font-medium text-gray-300 mt-2">Change Frequency</label>
+            <select id="changefreq-0" name="changefreq[]"
+                    class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-800 text-white text-sm">
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+              <option value="yearly">Yearly</option>
+              <option value="never">Never</option>
+            </select>
+            <label for="priority-0" class="block text-sm font-medium text-gray-300 mt-2">Priority (0.0 - 1.0)</label>
+            <input type="number" id="priority-0" name="priority[]" step="0.1" min="0" max="1"
+                   class="mt-1 block w-full border border-gray-600 rounded-md p-2 bg-gray-800 text-white text-sm"
+                   placeholder="0.8">
+          </div>
+        </div>
+        <button type="button" id="addUrl" class="btn-add-url w-full py-3 rounded-md font-medium bg-green-600 hover:bg-green-700 text-sm">Add Another URL</button>
+        <p id="error-message" class="text-red-500 text-sm hidden"></p>
+        <button type="submit" class="btn-generate w-full py-3 rounded-md font-medium text-sm">Generate Sitemap</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-4">
+    <div class="container mx-auto px-4 text-center text-gray-400 text-sm">
+      <p>Contact: <a href="mailto:vin.nesiaa.id@gmail.com" class="hover:text-green">vin.nesiaa.id@gmail.com</a></p>
+      <p>Follow us: <a href="https://www.instagram.com/vin.nesia.id" class="hover:text-green">Instagram</a></p>
+      <p>© 2025 Sitemap.xml VIN NESIA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
